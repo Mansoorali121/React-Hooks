@@ -7,14 +7,31 @@ const Useref = () => {
   const [count, setCount] = useState(0);
   const previosRef = useRef(0);
 
+
+  const [timer,setTimer] = useState(0);
+  const intervalRef = useRef(null);
+
   //     Input ref Property to do focus on the fields
   const inputRef = useRef(null);
   const inputRef2 = useRef(null);
 
   ///////
+  
   useEffect(() => {
     previosRef.current = count;
   }, [count]);
+
+
+  /// Use Timer
+// Use Timer
+useEffect(() => {
+  intervalRef.current = setInterval(() => {
+    setTimer(prev => prev + 1);
+  }, 1000);
+
+  return () => clearInterval(intervalRef.current);
+}, []); // <-- fixed by adding []
+
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text
@@ -56,7 +73,11 @@ const Useref = () => {
       />
 
       <View style={{padding: 20}}></View>
-      <Button title="Do Focus " onPress={() => inputRef2.current.focus()} />
+      <Button title="Do Focus " onPress={() => inputRef.current.focus()} />
+
+        <Text style={{marginTop:60, fontSize:20}}>{`Timer ${timer}`}</Text>
+
+        <Button onPress={()=> {clearInterval(intervalRef.current)}} title="Stop Timer " />
     </View>
   );
 };
