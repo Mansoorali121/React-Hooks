@@ -6,7 +6,7 @@ const Button = ({onPress, title}) => {
     <View style={{ alignItems: 'center',}}>
       <TouchableOpacity onPress={onPress}
         activeOpacity={0.7}
-        style={{backgroundColor: '#A4B3C2', padding:20, width:"50%", borderRadius:20,top:20, }}>
+        style={{backgroundColor: '#A4B3C2', padding:10, width:"50%", borderRadius:20,top:50, }}>
         <Text style={{color:"#fff", fontSize:20, textAlign:"center"}}>{title}</Text>
       </TouchableOpacity>
     </View>
