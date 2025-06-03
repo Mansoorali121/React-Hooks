@@ -11,5 +11,6 @@ import useHook from './src/usestatehook/useEffect Hook/Usseeffect';
 import Useref from './src/useRef/Useref';
 import UseContextHook from './src/usecontexthook/UseContextHook';
 import useCallback from './src/useCallback/useCallback';
+import Hookreducer from "./src/useereducer/Hookreducer"
 
-AppRegistry.registerComponent(appName, () => useCallback);
+AppRegistry.registerComponent(appName, () => Hookreducer);
