@@ -10,5 +10,6 @@ import usestateHook from './src/usestatehook/useState';
 import useHook from './src/usestatehook/useEffect Hook/Usseeffect';
 import Useref from './src/useRef/Useref';
 import UseContextHook from './src/usecontexthook/UseContextHook';
+import useCallback from './src/useCallback/useCallback';
 
-AppRegistry.registerComponent(appName, () => UseContextHook);
+AppRegistry.registerComponent(appName, () => useCallback);
